@@ -1,20 +1,20 @@
 function runScript(timesArray = null) {
   // Default times if none provided
   const defaultTimes = [
-    '8:00 - 8:45',
-    '8:45 - 9:30',
-    '9:40 - 10:25',
-    '10:25 - 11:10',
-    '11:20 - 12:05',
-    '12:05 - 12:50',
-    '1:00 - 1:45',
-    '1:45 - 2:30',
-    '2:40 - 3:25',
-    '3:25 - 4:10',
+    '8:00-8:45',
+    '8:45-9:30',
+    '9:30-10:15',
+    '10:15-11:00',
+    '11:00-11:45',
+    '11:45-12:30',
+    '12:30-13:15',
+    '13:15-14:00',
+    '14:00-14:45',
+    '14:45-15:30',
   ];
 
   // Use custom times if provided, otherwise use default
-  const times = timesArray || defaultTimes;
+  const times = timesArray || standardTimes;
 
   const table = document.querySelector('table.table');
   if (!table) {
@@ -42,3 +42,5 @@ chrome.runtime.onMessage.addListener((msg) => {
     runScript(msg.times);
   }
 });
+
+///

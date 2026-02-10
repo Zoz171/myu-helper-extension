@@ -3,16 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <link rel="stylesheet" href="popup.css" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
 </head>
 <body>
-  <h4 style="text-align: center;">MYU Ramadan Schedule Table Formatter</h4>
+  <img src="icons/myu-icon128.png" alt="logo" class="logo" />
+  <h3 style="text-align: center;">MYU Helper Tools (Beta)</h3>
+  <div class="header">
+    <h5>Table Format</h5>
+    <div class="mode-toggle" role="radiogroup" aria-label="Time mode">
+      <input type="radio" id="modeFixed" name="timeMode" value="fixed" checked>
+      <label for="modeFixed" class="mode-label">12-hour (Fixed)</label>
+      <input type="radio" id="modeRamadan" name="timeMode" value="ramadan">
+      <label for="modeRamadan" class="mode-label">Ramadan Times</label>
+    </div>
+  </div>
 
-  <button id="toggle">Format</button>
+  <div class="separator" aria-hidden="true"></div>
 
-  <textarea name="times" id="time"></textarea>
-  
-  <button id="ctoggle">Custome Format</button>
+  <button id="ctoggle" class="dropdown-btn" aria-expanded="false">Custom Format</button>
 
+  <div id="customArea" class="custom-area" hidden>
+    <div class="custom-row">
+      <textarea name="times" id="time" placeholder="Enter custom times (JSON array or lines)"></textarea>
+      <button id="applyCustom" class="apply-btn">Apply</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    Maintained By Ziad Mostafa & Hassan Mahmoud
+  </footer>
 
   <script type="module" src="popup.js"></script>
 </body>

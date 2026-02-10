@@ -5,7 +5,10 @@
   "description": "Format Table for Ramadan Script for myu.hti-o.edu.eg",
 
   "icons": {
-    "48": "icons/icon48.png"
+    "32": "icons/myu-icon96-rb.png",
+    "48": "icons/myu-icon96-rb.png",
+    "96": "icons/myu-icon96-rb.png",
+    "128": "icons/myu-icon96-rb.png"
   },
 
   "action": {

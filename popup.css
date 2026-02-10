@@ -1,48 +1,168 @@
 body {
-  width: 300px;
-  padding: 15px;
-  font-family: Arial, sans-serif;
+  width: 325px;
+  padding: 12px;
+  margin: 0;
+  font-family: 'Cairo', sans-serif;
+  background-color: #444444;
+  color: #f5f5f5;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
-h4 {
-  margin-top: 0;
-  margin-bottom: 15px;
-  color: #333;
+.logo {
+  display: block;
+  width: 128px;
+  height: auto;
+  margin: 8px auto 12px auto;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.header h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #f5f5f5;
 }
 
 button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
+  font-family: inherit;
+}
+
+.format-btn {
+  padding: 8px 12px;
   background-color: #4CAF50;
-  color: white;
+  color: #ffffff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 13px;
 }
 
-button:hover {
-  background-color: #45a049;
-}
+.format-btn:hover { background-color: #45a049; }
 
-#ctoggle {
-  background-color: #2196F3;
-}
-
-#ctoggle:hover {
-  background-color: #1976D2;
-}
-
-textarea {
+#ctoggle, .dropdown-btn {
+  display: block;
   width: 100%;
-  height: 150px;
-  margin: 10px 0;
-  padding: 8px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  font-family: monospace;
+  padding: 10px;
+  margin: 10px 0 6px 0;
+  background-color: #41868f;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+}
+
+.dropdown-btn[aria-expanded="true"] {
+  opacity: 0.95;
+}
+
+.dropdown-btn:hover { background-color: #347478; }
+
+/* Mode radio buttons styled as pill toggles */
+.mode-toggle {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  background: rgba(255,255,255,0.02);
+  padding: 4px;
+  border-radius: 8px;
+}
+.mode-toggle input[type="radio"] {
+  display: none;
+}
+.mode-label {
+  display: inline-block;
+  padding: 6px 8px;
   font-size: 12px;
+  color: rgba(245,245,245,0.9);
+  background: transparent;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.mode-toggle input[type="radio"]:checked + .mode-label {
+  background: #2f8a86;
+  color: #ffffff;
+}
+.mode-label:hover { filter: brightness(1.08); }
+
+.header h5, .header h4 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #f5f5f5;
+}
+
+.separator {
+  height: 1px;
+  background: rgba(255,255,255,0.12);
+  margin: 10px 0;
+  border-radius: 1px;
+}
+
+
+.custom-area {
+  margin-top: 8px;
+}
+
+#customArea[hidden] { display: none; }
+
+/* custom area: textarea and apply button in one row */
+.custom-row {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.custom-row textarea {
+  flex: 1 1 auto;
+  min-height: 70px;
+  margin: 0;
+}
+
+.custom-row .apply-btn {
+  flex: 0 0 82px;
+  height: 38px;
+  align-self: center;
+}
+
+#time, textarea {
+  padding: 8px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 6px;
+  background: rgba(255,255,255,0.03);
+  color: inherit;
+  font-family: inherit;
+  font-size: 13px;
   resize: vertical;
+}
+
+.apply-btn {
+  padding: 8px 12px;
+  background-color: #2f8a86;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.apply-btn:hover { background-color: #246f6d; }
+
+/* Footer */
+.footer {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  font-size: 11px;
+  color: rgba(245,245,245,0.7);
+  text-align: center;
+  line-height: 1.4;
 }

@@ -18,7 +18,7 @@
 
   "content_scripts": [
     {
-      "matches": ["https://myu.hti-o.edu.eg/*"],
+      "matches": ["https://myu.hti-o.edu.eg/*","https://credit.hti-o.edu.eg/*"],
       "js": ["script.js"]
     }
   ]

@@ -16,7 +16,7 @@ function runScript(timesArray = null) {
   // Use custom times if provided, otherwise use default
   const times = timesArray || standardTimes;
 
-  const table = document.querySelector('table.table');
+  const table = document.querySelector('table');
   if (!table) {
     console.error('Table not found');
     return;
@@ -27,8 +27,8 @@ function runScript(timesArray = null) {
   headerCells.forEach((cell, index) => {
     if (index !== 0 && times[index - 1]) {
       cell.textContent = times[index - 1];
-      cell.style.cssText =
-        'writing-mode: horizontal-tb; text-align: center;';
+      cell.style.cssText +=
+        'writing-mode: horizontal-tb; text-align: center;transform: rotate(0deg); ';
     }
   });
 

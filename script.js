@@ -16,13 +16,24 @@ function runScript(timesArray = null) {
   // Use custom times if provided, otherwise use default
   const times = timesArray || standardTimes;
 
-  const table = document.querySelector('table');
+let table;
+let headerCells;
+
+// if(window.location.href.contains("myu")) -> table = document.querySelector('table')
+  if (window.location.href.includes("myu.hti-o.edu.eg")) {
+    table = document.querySelector('table.table');
+    headerCells = table.querySelectorAll('thead tr th');
+
+  }else{
+    table = document.querySelector('table[name*="CoursesTableForm"]');
+    headerCells = table.querySelectorAll('tbody tr th');
+  }
+
   if (!table) {
     console.error('Table not found');
     return;
   }
 
-  const headerCells = table.querySelectorAll('thead tr th');
 
   headerCells.forEach((cell, index) => {
     if (index !== 0 && times[index - 1]) {

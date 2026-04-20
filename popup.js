@@ -1,3 +1,4 @@
+
 // Mode radios: send either `standardTimes` or `ramadanTimes` when selection changes
 const standardTimes = [
   '8:00 - 8:45',   // Period 1
@@ -40,14 +41,17 @@ document.querySelectorAll('input[name="timeMode"]').forEach(r => {
   r.addEventListener('change', (e) => {
     const val = e.target.value;
     if (val === 'fixed') {
-      // use standard fixed times
       sendTimesToPage(standardTimes);
     } else if (val === 'ramadan') {
-      // use ramadan times (send via custom route to ensure consistent format)
       sendTimesToPage(ramadanTimes);
+    } else if (val === 'training') {
+      chrome.tabs.query({ active: true, currentWindow: true }).then(([tab]) => {
+        if (tab) chrome.tabs.sendMessage(tab.id, { action: 'applyTrainingSchedule' });
+      });
     }
-  });
-});
+  })
+}
+);
 
 // Toggle the custom format dropdown area
 const ctoggle = document.getElementById("ctoggle");

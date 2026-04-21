@@ -12,6 +12,18 @@ const standardTimes = [
   '3:25 - 4:10',   // Period 10
 ];
 
+const summerTimes = [
+  '8:00 - 8:40',   // Period 1
+  '8:40 - 9:20',   // Period 2
+  '9:30 - 10:10',  // Period 3
+  '10:10 - 10:50', // Period 4
+  'أنشطة',         // Period 5
+  '11:40 - 12:20', // Period 6
+  '12:20 - 1:00',  // Period 7
+  '1:10 - 1:50',   // Period 8
+  '1:50 - 2:30',   // Period 9
+];
+
 const ramadanTimes = [
   '8:00 - 8:35',   // Period 1
   '8:35 - 9:10',   // Period 2
@@ -45,6 +57,8 @@ document.querySelectorAll('input[name="timeMode"]').forEach(r => {
     } else if (val === 'ramadan') {
       // use ramadan times (send via custom route to ensure consistent format)
       sendTimesToPage(ramadanTimes);
+    } else if (val === 'summer') {
+      sendTimesToPage(summerTimes);
     }
   });
 });
